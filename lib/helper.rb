@@ -7,6 +7,6 @@ module Database
 
   def self.add_test_data
     conn = PG::Connection.open(self.database_connection)
-    conn.exec_params("INSERT INTO bookmarks (url) VALUES ('http://www.github.com')")
+    conn.exec_params("INSERT INTO bookmarks (url, title) VALUES ('http://www.github.com', 'github')")
   end
 end
