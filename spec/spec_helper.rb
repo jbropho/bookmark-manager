@@ -1,6 +1,7 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+'../lib/helper'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -16,4 +17,9 @@ RSpec.configure do |config|
   require 'capybara'
   require 'capybara/rspec'
   Capybara.app = BookmarkApp
+
+  config.before(:each) do
+    conn = PG::Connection.open(:dbname => 'bookmark_manager_test')
+    conn.exec_params('TRUNCATE bookmarks;')
+  end
 end
