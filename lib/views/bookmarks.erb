@@ -1,1 +1,3 @@
-<%= @bookmarks.each do |bookmark| puts bookmark end %>
+<% @bookmarks.each do |b| %>
+  <p><%= b['url'] %></p>
+<% end %>
