@@ -1,8 +1,15 @@
-require_relative'helper'
+require_relative 'helper'
+require_relative 'bookmark_mapper'
+require 'pry'
 
 class BookmarkManager
    def self.all
      execute 'SELECT url FROM bookmarks'
+   end
+
+   def self.all_objects
+     results = execute('SELECT * FROM bookmarks').to_a
+     results.map! { |result| BookMapper::Loader::create(result) }
    end
 
    def self.add(url, title)
