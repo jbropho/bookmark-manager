@@ -8,12 +8,12 @@ class BookmarkApp < Sinatra::Base
 
   get '/bookmarks' do
     "#{flash[:success]}"
-    @bookmarks = Bookmark.all.to_a
+    @bookmarks = BookmarkManager.all.to_a
     erb :bookmarks
   end
 
   post '/add' do
-    Bookmark.add(params[:url])
+    BookmarkManager.add(params[:url])
     flash[:success] = "You sucessfully added #{params[:url]}"
     redirect '/bookmarks'
   end

@@ -1,7 +1,6 @@
-require 'pry'
 require_relative'helper'
 
-class Bookmark
+class BookmarkManager
    def self.all
      execute 'SELECT url FROM bookmarks'
    end
