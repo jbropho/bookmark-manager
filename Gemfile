@@ -6,6 +6,7 @@ ruby '2.5.0'
 
 gem 'rake'
 gem 'sinatra'
+gem 'sinatra-flash'
 gem 'pg'
 gem 'pry'
 
