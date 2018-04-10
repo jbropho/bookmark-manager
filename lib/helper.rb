@@ -6,6 +6,6 @@ module Database
 
   def self.add_test_data
     conn = PG::Connection.open(:dbname => 'bookmark_manager_test')
-    conn.exec_params("INSERT INTO bookmarks VALUES (1, 'http://www.github.com')")
+    conn.exec_params("INSERT INTO bookmarks (url) VALUES ('http://www.github.com')")
   end
 end

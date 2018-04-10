@@ -1,60 +1,28 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jordanbrooks/Documents/makers/week-challenge/bookmark-manager/lib/app.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/jordanbrooks/Documents/makers/week-challenge/bookmark-manager/lib/bookmark.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        2,
-        2,
-        2,
-        null,
-        null
-      ],
-      "/Users/jordanbrooks/Documents/makers/week-challenge/bookmark-manager/lib/helper.rb": [
-        1,
-        1,
-        2,
-        0,
-        null,
-        null,
-        1,
-        2,
-        2,
-        null,
-        null
-      ],
       "/Users/jordanbrooks/Documents/makers/week-challenge/bookmark-manager/spec/bookmark_spec.rb": [
         1,
-        null,
-        1,
         1,
         1,
         1,
         1,
         1,
         null,
+        null,
+        null
+      ],
+      "/Users/jordanbrooks/Documents/makers/week-challenge/bookmark-manager/spec/features/add_bookmark_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
       "/Users/jordanbrooks/Documents/makers/week-challenge/bookmark-manager/spec/features/view_bookmark_spec.rb": [
-        1,
-        null,
         1,
         1,
         1,
@@ -64,6 +32,6 @@
         null
       ]
     },
-    "timestamp": 1523354046
+    "timestamp": 1523359862
   }
 }
