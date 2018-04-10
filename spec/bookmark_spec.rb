@@ -1,9 +1,7 @@
-describe BookmarkManager do
-  describe '.all' do
-    it 'returns all bookmarks' do
-      Database::add_test_data
-      bookmarks = BookmarkManager.all.to_a
-      expect(bookmarks).to include({"url"=>"http://www.github.com"})
+describe Bookmark do
+  describe '.new' do
+    it 'accepts two arguments at init' do
+      expect{described_class.new('google', 'http://www.google.com')}.not_to raise_error
     end
   end
 end
