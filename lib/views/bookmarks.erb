@@ -1,9 +1,11 @@
 <%= flash[:success] %>
-
-<% @bookmarks.each do |n| %>
-  <a href=<%= n.url %>><%= n.title %></a>
-  <br>
-<% end %>
+<br>
+<ul>
+  <% @bookmarks.each do |n| %>
+    <li><a href=<%= n.url %>><%= n.title %></a></li>
+    <br>
+  <% end %>
+</ul>
 
 <form action="add" method="post">
   <label for="Title"> title: </label>
