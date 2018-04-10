@@ -4,6 +4,8 @@ require 'simplecov-console'
 require_relative '../lib/helper'
 require_relative '../lib/app'
 require_relative '../lib/bookmark'
+require_relative '../lib/bookmark_manager'
+require_relative '../lib/bookmark_mapper'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

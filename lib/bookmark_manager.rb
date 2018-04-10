@@ -5,9 +5,9 @@ class BookmarkManager
      execute 'SELECT url FROM bookmarks'
    end
 
-   def self.add(url)
+   def self.add(url, title)
      raise "#{url} is not a valid url" unless self.valid_url?(url)
-     execute('INSERT INTO bookmarks (url) VALUES ($1)', [url])
+     execute('INSERT INTO bookmarks (url, title) VALUES ($1, $2)', [url, title])
    end
 
    private
