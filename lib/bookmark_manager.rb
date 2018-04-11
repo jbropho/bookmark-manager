@@ -3,8 +3,10 @@ require_relative 'bookmark_mapper'
 require 'pry'
 
 class BookmarkManager
-   def self.all
-     execute 'SELECT url FROM bookmarks'
+
+   def self.join_search(id)
+     execute('SELECT * FROM bookmarks LEFT OUTER JOIN comments ON' +
+       '(bookmarks.id = comments.bookmark_id) WHERE bookmarks.id=$1', [id])
    end
 
    def self.all_objects

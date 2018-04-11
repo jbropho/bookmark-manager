@@ -7,6 +7,11 @@ class BookmarkApp < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
 
+  get '/thing' do
+    @thing = BookmarkManager.join_search(32)
+    binding.pry
+  end
+
   get '/bookmarks' do
     "#{flash[:success]}"
     @bookmarks = BookmarkManager.all_objects
