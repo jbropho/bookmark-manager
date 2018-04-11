@@ -19,4 +19,14 @@ feature 'user performs CRUD operations on bookmark resource' do
     delete.click
     page.assert_selector(:link, nil, href: 'http://www.github.com', count: 0)
   end
+
+  scenario 'user updates a bookmark' do
+    Database::add_test_data
+    visit('/bookmarks')
+    update = page.find_by_id("update-github")
+    update.click
+    fill_in "title", :with => "git-hubbbbb"
+    click_button "update"
+    expect(page).to have_content "git-hubbbbb"
+  end
 end

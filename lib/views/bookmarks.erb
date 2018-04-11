@@ -9,6 +9,10 @@
       <input type="hidden" name="id" value=<%= "#{b.id}" %>>
       <input type="submit" id=<%="delete-#{b.title}"%>  value="delete"/>
     </form>
+    <form action = "/update" method = "get">
+      <input type="hidden" name="id" value=<%= "#{b.id}" %>>
+      <input type="submit" id=<%="update-#{b.title}"%>  value="update"/>
+    </form>
     <br>
   <% end %>
 </ul>

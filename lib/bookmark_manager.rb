@@ -12,6 +12,15 @@ class BookmarkManager
      results.map! { |result| BookMapper::Loader::create(result) }
    end
 
+   def self.update(id, title, url)
+      execute('UPDATE bookmarks SET url = $1, title = $2 WHERE id=$3', [url, title, id])
+   end
+
+   def self.find(id)
+     results = execute('SELECT * FROM bookmarks WHERE id=$1', [id]).to_a
+     BookMapper::Loader::create(results[0])
+   end
+
    def self.add(url, title)
      raise "#{url} is not a valid url" unless self.valid_url?(url)
      execute('INSERT INTO bookmarks (url, title) VALUES ($1, $2)', [url, title])

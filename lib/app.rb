@@ -23,4 +23,14 @@ class BookmarkApp < Sinatra::Base
     BookmarkManager.delete(params[:id])
     redirect '/bookmarks'
   end
+
+  get '/update' do
+    @bookmark = BookmarkManager.find(params[:id])
+    erb :update
+  end
+
+  post '/update' do
+    BookmarkManager.update(params[:id], params[:title], params[:url])
+    redirect '/bookmarks'
+  end
 end
