@@ -1,8 +1,14 @@
 <%= flash[:success] %>
 <br>
 <ul>
-  <% @bookmarks.each do |n| %>
-    <li><a href=<%= n.url %>><%= n.title %></a></li>
+  <% @bookmarks.each do |b| %>
+    <li>
+      <a href=<%= b.url %>><%= b.title %></a>
+    </li>
+    <form action = "/delete" method = "post">
+      <input type="hidden" name="id" value=<%= "#{b.id}" %>>
+      <input type="submit" id=<%="delete-#{b.title}"%>  value="delete"/>
+    </form>
     <br>
   <% end %>
 </ul>

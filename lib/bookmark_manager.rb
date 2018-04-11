@@ -17,6 +17,10 @@ class BookmarkManager
      execute('INSERT INTO bookmarks (url, title) VALUES ($1, $2)', [url, title])
    end
 
+   def self.delete(id)
+     execute('DELETE FROM bookmarks WHERE id=$1', [id])
+   end
+
    private
    def self.execute(request, params = [])
      connect

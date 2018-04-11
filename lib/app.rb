@@ -18,4 +18,9 @@ class BookmarkApp < Sinatra::Base
     flash[:success] = "You sucessfully added #{params[:url]}"
     redirect '/bookmarks'
   end
+
+  post '/delete' do
+    BookmarkManager.delete(params[:id])
+    redirect '/bookmarks'
+  end
 end

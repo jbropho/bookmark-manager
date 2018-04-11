@@ -1,18 +1,22 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  SimpleCov::Formatter::HTMLFormatter
+])
+
+SimpleCov.start do
+   add_filter '/spec'
+end
+
 require_relative '../lib/helper'
 require_relative '../lib/app'
 require_relative '../lib/bookmark'
 require_relative '../lib/bookmark_manager'
 require_relative '../lib/bookmark_mapper'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
 
 RSpec.configure do |config|
   ENV['RACK_ENV'] = 'test'

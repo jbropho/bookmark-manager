@@ -3,7 +3,7 @@ module BookMapper
 
   module Loader
     def self.create(data)
-      Bookmark.new(data["title"], data["url"])
+      Bookmark.new(data["title"], data["url"], data["id"])
     end
   end
 end
