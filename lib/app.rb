@@ -14,7 +14,7 @@ class BookmarkApp < Sinatra::Base
 
   get '/bookmarks' do
     "#{flash[:success]}"
-    @bookmarks = BookmarkManager.all_objects
+    @bookmarks = BookmarkManager.all
     erb :bookmarks
   end
 
